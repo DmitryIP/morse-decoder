@@ -60,7 +60,12 @@ function decode(expr) {
             }
 
         }
-        decodeString += MORSE_TABLE[morseString];
+        if (morseString) {
+            decodeString += MORSE_TABLE[morseString];
+        } else {
+            decodeString += ' '
+        };
+        morseString = '';
     }
 
     return decodeString;
